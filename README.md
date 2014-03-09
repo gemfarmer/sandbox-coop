@@ -31,7 +31,10 @@
 8. In a new terminal tab, start mongo `sudo mongod`
 9. In another new terminal tab, enter mongo shell `mongo`
 10. In mongo shell, create new dev database `use fullstack-dev`
-11. In original tab, start development server `grunt serve`
+11. In original tab, start development server `grunt serve` NOTE: not a typo `grunt serve`
+
+### Workflow, version control, branching
+1. As we discussed at VE the other day, I would like to try our best to be anal about branching, so create new branch `git checkout -b [new branch name]` and push to it, create a pull request and we'll review it. Obviously if it is a small edit that won't have a potential cascading bug just push to master. If you think I'm being too rigid let me know and I can be less up-tight
 
 ### Add-ons
 * Eventbrite
@@ -41,9 +44,9 @@
 ### Project Timeline
 * Soft Deadline: May / June
 ##### March
-* Scaffold project
+* Scaffold project √
 * Build database
-* Build user settings / Login
+* Build user settings / Login √
 * Build basic page layout with correct functionality
 * Deploy to heroku throughout
 ##### April
