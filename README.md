@@ -21,8 +21,8 @@
 3. Create Project Directory `mkdir sandbox-coop`
 4. `cd sandbox-coop`
 5. Clone Repo `git clone https://github.com/gemfarmer/sandbox-coop.git`
-6. `bower install`
-7. `npm install`
+6. Install Bower Dependencies `bower install`
+7. Install Node Modules `npm install`
 8. In a new terminal tab, start mongo `sudo mongod`
 9. In another new terminal tab, enter mongo shell `mongo`
 10. In mongo shell, create new dev database `use fullstack-dev`
