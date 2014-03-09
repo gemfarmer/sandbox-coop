@@ -40,21 +40,25 @@
 * Eventbrite
 * Paypal
 * Webfonts
+* discus??
 
 ### Project Timeline
 * Soft Deadline: May / June
+
 ##### March
 * Scaffold project √
 * Build database
 * Build user settings / Login √
 * Build basic page layout with correct functionality
 * Deploy to heroku throughout
+
 ##### April
 * Begin working on stylistic component of site
 * Encorporate webfonts
 * Add admin role and build out editable backend (hopefully using sockets)
 * Integrate with Paypal
 * Integrate with Eventbrite
+
 ##### May
 * Begin deploying, testing, making edits, working with Libby and other Sandboxers to tweak feel of site
 * ???
