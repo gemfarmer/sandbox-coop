@@ -18,4 +18,15 @@ angular.module('sandboxCoop4App')
         });
       }
 		};
+    $scope.changeAdminStatus = function(form) {
+      $scope.submitted = true;
+      if(form.$valid) {
+        var currentUser = Auth.currentUser();
+        console.log("currentUser", currentUser)
+        // if (currentUser.role == "userAdminAnyDatabase"){
+
+        // }
+        // else
+      }
+    }
   });
