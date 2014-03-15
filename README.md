@@ -72,3 +72,22 @@
 * Look at mock-up and layout user flow for the site
 * Use flow to generate new routes and start working on db schema and mongoose models
 * ???
+
+
+### What the Admin Structure will look like:
+* admin user at highest level.
+	* Accesses separate and simplified page through /admin url
+	* Page allows superuser (admin) to edit what other users are allowed to see/do on the normal site
+	* List and search information on users
+	* can add certain things to the site
+* users with special (contributor) privileges. Can edit certain areas of the site
+* general users. no editing priveleges. can comment or buy things
+
+###TODO admin branch
+* start building a /admin route from client side
+* connect /admin route to api
+* figure out how to have multiple mongodb connections
+* figure out how to have multiple mongostore connectiosn
+* add admin database
+* connect admin database with fullstack db
+* figure out how to connect to multiple MONGO_URI

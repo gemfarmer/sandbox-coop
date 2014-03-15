@@ -1,0 +1,23 @@
+.contributors{
+	text-align: center;
+}
+.contributor{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	background-color:#ccc;
+	text-align: center;
+	color:white;
+	margin:15px;
+	float:left;
+}
+
+.contributor:hover{
+	color:#ccc;
+}
+.contributor-img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
