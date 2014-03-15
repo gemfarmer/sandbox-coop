@@ -33,21 +33,6 @@
 
       <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
     </form>
-    <form class="form" name="form" ng-submit="changeAdminStatus(form)" novalidate>
-
-      <div class="form-group">
-          <label>Role</label>
-            User <input type="checkbox" class="form-control" ng-model="user.role.user" ng-minlength="3"> <br/>
-            Administrator: <input type="checkbox" ng-model="user.role.admin" ng-minlength="3">
-          <p class="help-block"
-             ng-show="(form.role.$error.minlength || form.role.$error.required) && (form.newPassword.$dirty || submitted)">
-            Password must be at least 3 characters.
-          </p>
-        </div>
-        <p class="help-block"> {{ message }} </p>
-
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
-    </form>
   </div>
 
 
