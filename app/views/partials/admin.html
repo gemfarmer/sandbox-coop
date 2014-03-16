@@ -21,11 +21,9 @@
 			<td ng-show="!toggleRole" ng-click="editRole($index)" class="user-role" style="cursor:cell;" id="{{user._id}}">{{user.role}}</td>
 			<td class="user-role" id="{{user._id}}" ng-show="toggleRole">
 				<select class="user-role-select" namee="user.role" ng-model="user.role">
-					<option value="">Select a role</option>
 			        <option value="user">User</option>
 			        <option value="contributor">Contributor</option>
 			        <option value="admin">Admin</option>
-			        <option value="admin">{{user[$index]}}</option>
 				</select><span class="submit-edit" style="cursor:pointer;" ng-click="editRole($index)">submit</span>
 			</td>
 			<td>{{user.timeCreated}}</td>
