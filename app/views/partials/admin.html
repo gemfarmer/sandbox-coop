@@ -1,0 +1,24 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="row">
+  <div class="col-sm-12">
+	<h1>Admin</h1>
+  </div>
+  <div class="col-sm-12 table-responsive">
+	<table class="table table-striped">
+		<tr>
+			<th>User Name</th>
+			<th>User Email</th>
+			<th>User Role</th>
+		</tr>
+		<tr ng-repeat="user in userList">
+			<td>{{user.name}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.role}}</td>
+		</tr>
+
+	</table>
+  </div>
+
+
+</div>
