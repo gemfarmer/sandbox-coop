@@ -2,7 +2,7 @@
 
 angular.module('sandboxCoop4App')
   .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
-    
+
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
@@ -11,10 +11,10 @@ angular.module('sandboxCoop4App')
 
       /**
        * Authenticate user
-       * 
+       *
        * @param  {Object}   user     - login info
        * @param  {Function} callback - optional
-       * @return {Promise}            
+       * @return {Promise}
        */
       login: function(user, callback) {
         var cb = callback || angular.noop;
@@ -30,11 +30,42 @@ angular.module('sandboxCoop4App')
         }).$promise;
       },
 
+
+      // loginContributor: function(user, callback) {
+      //   var cb = callback || angular.noop;
+
+      //   return Session.save({
+      //     email: user.email,
+      //     password: user.password,
+      //     role: 'contributor'
+      //   }, function(user) {
+      //     $rootScope.currentUser = user;
+      //     return cb();
+      //   }, function(err) {
+      //     return cb(err);
+      //   }).$promise;
+      // },
+
+      // loginAdmin: function(user, callback) {
+      //   var cb = callback || angular.noop;
+      //   console.log(user,user.email,user.password, user.role)
+      //   return Session.save({
+      //     email: user.email,
+      //     password: user.password,
+      //     role: 'admin'
+      //   }, function(user) {
+      //     $rootScope.currentUser = user;
+      //     return cb();
+      //   }, function(err) {
+      //     return cb(err);
+      //   }).$promise;
+      // },
+
       /**
        * Unauthenticate user
-       * 
+       *
        * @param  {Function} callback - optional
-       * @return {Promise}           
+       * @return {Promise}
        */
       logout: function(callback) {
         var cb = callback || angular.noop;
@@ -50,10 +81,10 @@ angular.module('sandboxCoop4App')
 
       /**
        * Create a new user
-       * 
+       *
        * @param  {Object}   user     - user info
        * @param  {Function} callback - optional
-       * @return {Promise}            
+       * @return {Promise}
        */
       createUser: function(user, callback) {
         var cb = callback || angular.noop;
@@ -70,11 +101,11 @@ angular.module('sandboxCoop4App')
 
       /**
        * Change password
-       * 
-       * @param  {String}   oldPassword 
-       * @param  {String}   newPassword 
+       *
+       * @param  {String}   oldPassword
+       * @param  {String}   newPassword
        * @param  {Function} callback    - optional
-       * @return {Promise}              
+       * @return {Promise}
        */
       changePassword: function(oldPassword, newPassword, callback) {
         var cb = callback || angular.noop;
@@ -91,7 +122,7 @@ angular.module('sandboxCoop4App')
 
       /**
        * Gets all available info on authenticated user
-       * 
+       *
        * @return {Object} user
        */
       currentUser: function() {
@@ -100,7 +131,7 @@ angular.module('sandboxCoop4App')
 
       /**
        * Simple check to see if a user is logged in
-       * 
+       *
        * @return {Boolean}
        */
       isLoggedIn: function() {

@@ -16,6 +16,10 @@ angular.module('sandboxCoop4App', [
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
+      .when('/admin', {
+        templateUrl: 'partials/admin',
+        controller: 'AdminCtrl'
+      })
       .when('/signup', {
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
