@@ -10,11 +10,13 @@
 			<th>User Name</th>
 			<th>User Email</th>
 			<th>User Role</th>
+			<th>Date Joined</th>
 		</tr>
 		<tr ng-repeat="user in userList">
 			<td>{{user.name}}</td>
 			<td>{{user.email}}</td>
 			<td>{{user.role}}</td>
+			<td>{{user.timeCreated}}</td>
 		</tr>
 
 	</table>
