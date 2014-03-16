@@ -2,25 +2,22 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <h1>Admin</h1>
+	<h1>Admin</h1>
   </div>
-  <div class="col-sm-12">
-  	<table>
-  		<th>
-  			<td>User Name</td>
-  			<td>User Email</td>
-  			<td>User Role</td>
-  		</th>
-  		{{userList}}
-  		<div ng-repeat="user in userList">
-  			<tr>
-  				<td>{{user.name}}</td>
-  				<td>{{user.email}}</td>
-  				<td>{{user.role}}</td>
-  			</tr>
-  		</div>
+  <div class="col-sm-12 table-responsive">
+	<table class="table table-striped">
+		<tr>
+			<th>User Name</th>
+			<th>User Email</th>
+			<th>User Role</th>
+		</tr>
+		<tr ng-repeat="user in userList">
+			<td>{{user.name}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.role}}</td>
+		</tr>
 
-  	</table>
+	</table>
   </div>
 
 
