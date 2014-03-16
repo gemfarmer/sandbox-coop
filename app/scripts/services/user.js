@@ -7,7 +7,9 @@ angular.module('sandboxCoop4App')
     }, { //parameters default
       update: {
         method: 'PUT',
-        params: {}
+        params: {
+          role: '@role'
+        }
       },
       get: {
         method: 'GET',

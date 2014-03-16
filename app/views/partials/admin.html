@@ -4,6 +4,8 @@
   <div class="col-sm-12">
 	<h1>Admin</h1>
   </div>
+  Search: <input type="text" ng-model="filters.name" size="20" />
+  <br>
   <div class="col-sm-12 table-responsive">
 	<table class="table table-striped">
 		<tr>
@@ -12,10 +14,20 @@
 			<th>User Role</th>
 			<th>Date Joined</th>
 		</tr>
-		<tr ng-repeat="user in userList">
+		<tr ng-repeat="user in userList | filter: filters.name track by $index ">
 			<td>{{user.name}}</td>
 			<td>{{user.email}}</td>
-			<td>{{user.role}}</td>
+
+			<td ng-show="!toggleRole" ng-click="editRole($index)" class="user-role" style="cursor:cell;" id="{{user._id}}">{{user.role}}</td>
+			<td class="user-role" id="{{user._id}}" ng-show="toggleRole">
+				<select class="user-role-select" namee="user.role" ng-model="user.role">
+					<option value="">Select a role</option>
+			        <option value="user">User</option>
+			        <option value="contributor">Contributor</option>
+			        <option value="admin">Admin</option>
+			        <option value="admin">{{user[$index]}}</option>
+				</select><span class="submit-edit" style="cursor:pointer;" ng-click="editRole($index)">submit</span>
+			</td>
 			<td>{{user.timeCreated}}</td>
 		</tr>
 
@@ -24,3 +36,4 @@
 
 
 </div>
+
