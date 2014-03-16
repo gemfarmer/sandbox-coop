@@ -56,6 +56,7 @@ angular.module('sandboxCoop4App')
        * @return {Promise}
        */
       createUser: function(user, callback) {
+
         var cb = callback || angular.noop;
 
         return User.save(user,
@@ -83,6 +84,8 @@ angular.module('sandboxCoop4App')
           oldPassword: oldPassword,
           newPassword: newPassword
         }, function(user) {
+          console.log("kuser",user)
+          console.log("callbackj user", cb(user))
           return cb(user);
         }, function(err) {
           return cb(err);
