@@ -1,5 +1,11 @@
 # Sandbox Coop
 
+### TODO
+* On admin page, make it so that clicking on one user's role doesn't activate input fields in all of them
+* Deploy to heroku
+* Add contributor page that is accessible with contributor or admin role, but not user role
+
+
 ### Site should include...
 * Eventbrite
 * Ecommerce with paypal
@@ -47,7 +53,7 @@
 
 ##### March
 * Scaffold project √
-* Build database
+* Build database √
 * Build user settings / Login √
 * Build basic page layout with correct functionality
 * Deploy to heroku throughout
@@ -68,10 +74,6 @@
 * bepollen.com
 
 
-### TODO
-* Look at mock-up and layout user flow for the site
-* Use flow to generate new routes and start working on db schema and mongoose models
-* ???
 
 
 ### What the Admin Structure will look like:
@@ -83,11 +85,3 @@
 * users with special (contributor) privileges. Can edit certain areas of the site
 * general users. no editing priveleges. can comment or buy things
 
-###TODO admin branch
-* start building a /admin route from client side
-* connect /admin route to api
-* figure out how to have multiple mongodb connections
-* figure out how to have multiple mongostore connectiosn
-* add admin database
-* connect admin database with fullstack db
-* figure out how to connect to multiple MONGO_URI
