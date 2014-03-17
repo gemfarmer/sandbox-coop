@@ -30,6 +30,12 @@
 1. Install yeoman `npm install -g yo`
 2. Install yeoman generator-angular-fullstack `npm install -g generator-angular-fullstack`
 
+
+### Deployment:
+1. `grunt build`
+2. cd to dist file: `git push heroku master`
+3. `heroku open`
+
 ##### NOTE: you can skip step 1 and 2 to get the project going, but adding routes and resources, etc is made much easier by having access to the yo command
 3. Create Project Directory `mkdir sandbox-coop`
 4. `cd sandbox-coop`
