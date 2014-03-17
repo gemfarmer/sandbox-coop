@@ -6,6 +6,9 @@
 * On admin page, make it so that clicking on one user's role doesn't activate input fields in all of them
 * Deploy to heroku
 * Add contributor page that is accessible with contributor or admin role, but not user role
+* [integrate moment.js](http://momentjs.com/docs)
+* [integrate angular moment](https://github.com/urish/angular-moment)
+	- when installing, make sure you are in the directory with access to bower.json
 
 
 ### Site should include...

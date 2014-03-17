@@ -26,7 +26,7 @@
 			        <option value="admin">Admin</option>
 				</select><span class="submit-edit" style="cursor:pointer;" ng-click="editRole($index)">submit</span>
 			</td>
-			<td>{{user.timeCreated}}</td>
+			<td>{{user.timeCreated | amDateFormat:'MM/D/YY'}}</td>
 		</tr>
 
 	</table>
