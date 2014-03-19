@@ -56,8 +56,9 @@
 ### Add-ons
 * Eventbrite
 * Paypal
-* Webfonts
+* Webfonts --> [Nasty Icons?](http://nastyicons.com/)
 * discus??
+* web chimp
 
 ### Project Timeline
 * Soft Deadline: May / June
@@ -85,8 +86,6 @@
 * bepollen.com
 
 
-
-
 ### What the Admin Structure will look like:
 * admin user at highest level.
 	* Accesses separate and simplified page through /admin url
@@ -95,4 +94,42 @@
 	* can add certain things to the site
 * users with special (contributor) privileges. Can edit certain areas of the site
 * general users. no editing priveleges. can comment or buy things
+
+### Site Structure --User FLOW
+* Landing Page
+	1. Logo
+	2. Links below for ...
+		* shop
+			1. available items in inline-blocks
+			2. List of filtering options
+			3. Search bar
+		* login/sign-up
+		* calendar
+			1. Calendar page with different contributors tagged with different colors
+		* Map
+		* CONTRIBUTOR
+			- new events
+			- new blog posts
+			- add products
+			- edit their pics/ description
+		* ADMIN
+			- add events
+			- add blog posts
+			- add products
+			- manage member statuses
+			- check site stats
+	3. Text blog with latest contributions from site "contributors" / Link to Blog
+		1. Blog has archives
+		2. Formatting??
+		3. Can view individual contributors blog
+
+	4. "Meet our members" block with picture carousel
+		-> About us/Philosophy
+		* Inline block member blocks (pic and basic description)
+		* Link to their products?
+	5. Social Links, Twitter stream
+
+
+
+
 
