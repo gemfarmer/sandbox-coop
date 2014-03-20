@@ -5,7 +5,8 @@ angular.module('sandboxCoop4App', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'angularMoment'
+  'angularMoment',
+  'ui.calendar'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
