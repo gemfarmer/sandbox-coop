@@ -3,13 +3,14 @@
 ## [Latest Demo Site](http://guarded-refuge-7678.herokuapp.com)
 
 ### TODO
-* On admin page, make it so that clicking on one user's role doesn't activate input fields in all of them
-* Deploy to heroku
-* Add contributor page that is accessible with contributor or admin role, but not user role
-* [integrate moment.js](http://momentjs.com/docs)
-* [integrate angular moment](https://github.com/urish/angular-moment)
-	- when installing, make sure you are in the directory with access to bower.json
+* Apply basic styles to calendar
+* get calendar hooked up to db
+* get calendar hooked up to gcal
 
+### Calendar resources:
+* [UI Calendar](http://angular-ui.github.io/ui-calendar/)
+* [angular-ui-calendar](https://github.com/angular-ui/ui-calendar)
+* [fullcalendar](http://arshaw.com/fullcalendar/docs/)
 
 ### Site should include...
 * Eventbrite
@@ -33,6 +34,21 @@
 1. Install yeoman `npm install -g yo`
 2. Install yeoman generator-angular-fullstack `npm install -g generator-angular-fullstack`
 
+### Resources:
+##### Yeoman
+* [generator-angular-fullstack](https://www.npmjs.org/package/generator-angular-fullstack)
+
+##### UI utils
+* [angular ui utils](http://angular-ui.github.io/ui-utils/)
+
+##### Calendar
+* [UI Calendar](http://angular-ui.github.io/ui-calendar/)
+* [angular-ui-calendar](https://github.com/angular-ui/ui-calendar)
+* [fullcalendar](http://arshaw.com/fullcalendar/docs/)
+
+##### Moment
+* [moment](http://momentjs.com/docs/)
+* [angular-moment](https://github.com/urish/angular-moment)
 
 ### Deployment:
 1. `grunt build`
