@@ -31,10 +31,17 @@ angular.module('sandboxCoop4App', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .when('/showUsers', {
-        templateUrl: 'partials/showusers',
-        controller: 'ShowusersCtrl',
-        authenticate: true
+      .when('/shop', {
+        templateUrl: 'partials/shop',
+        controller: 'ShopCtrl'
+      })
+      .when('/calendar', {
+        templateUrl: 'partials/calendar',
+        controller: 'CalendarCtrl'
+      })
+      .when('/map', {
+        templateUrl: 'partials/map',
+        controller: 'MapCtrl'
       })
       .otherwise({
         redirectTo: '/'
