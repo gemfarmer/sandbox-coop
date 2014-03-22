@@ -43,7 +43,7 @@ angular.module('sandboxCoop4App', [
       })
       .when('/event', {
         templateUrl: 'partials/event',
-        controller: 'CalendarCtrl'
+        controller: 'EventCtrl'
       })
       .when('/map', {
         templateUrl: 'partials/map',
