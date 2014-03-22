@@ -1,0 +1,17 @@
+.new-event {
+	width:100px;
+	height: 20px;
+	background:#428bca;
+	border-radius: 5px;
+	position: absolute;
+	opacity:1;
+	z-index: 20;
+	border: none;
+	text-align: center;
+ 	cursor: pointer;
+ 	text-decoration: none;
+ 	color:white;
+}
+.new-event:hover {
+ 	color:white;
+}

@@ -6,7 +6,8 @@ angular.module('sandboxCoop4App', [
   'ngSanitize',
   'ngRoute',
   'angularMoment',
-  'ui.calendar'
+  'ui.calendar',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -38,6 +39,10 @@ angular.module('sandboxCoop4App', [
       })
       .when('/calendar', {
         templateUrl: 'partials/calendar',
+        controller: 'CalendarCtrl'
+      })
+      .when('/event', {
+        templateUrl: 'partials/event',
         controller: 'CalendarCtrl'
       })
       .when('/map', {

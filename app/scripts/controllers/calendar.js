@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('sandboxCoop4App')
-  .controller('CalendarCtrl', function ($scope) {
-
+  .controller('CalendarCtrl', function ($scope, $rootScope) {
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -11,7 +10,7 @@ angular.module('sandboxCoop4App')
     $scope.changeTo = 'Hungarian';
     /* event source that pulls from google.com */
     $scope.eventSource = {
-            url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
+            // url: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
             className: 'gcal-event',           // an option!
             currentTimezone: 'America/Chicago' // an option!
     };
@@ -44,15 +43,34 @@ angular.module('sandboxCoop4App')
     };
     /* alert on eventClick */
     $scope.alertOnEventClick = function( event, allDay, jsEvent, view ){
-        $scope.alertMessage = (event.title + ' was clicked ');
+        console.log('event click')
+        $scope.alertMessage = event.title + ' was clicked ';
     };
     /* alert on Drop */
      $scope.alertOnDrop = function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view){
+        console.log('drop')
        $scope.alertMessage = ('Event Droped to make dayDelta ' + dayDelta);
     };
     /* alert on Resize */
     $scope.alertOnResize = function(event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view ){
+       console.log('resize')
        $scope.alertMessage = ('Event Resized to make dayDelta ' + minuteDelta);
+    };
+
+    $scope.alertOnDayClick = function(date, allDay, jsEvent, view ){
+       console.log('day click')
+       console.log("date",date)
+       console.log("allDay",allDay)
+       console.log("jsEvent",jsEvent)
+       console.log("view",view)
+       var $newEvent = $('.new-event')
+       $newEvent.addClass('show')
+       $newEvent.css('left',jsEvent.clientX-50)
+       $newEvent.css('top',jsEvent.clientY-15)
+       DatepickerDemoCtrl($scope)
+
+
+       $scope.alertMessage = ('Date chose is: ' + date);
     };
     /* add and removes an event source of choice */
     $scope.addRemoveEventSource = function(sources,source) {
@@ -98,20 +116,21 @@ angular.module('sandboxCoop4App')
           center: 'title',
           right: 'today prev,next'
         },
-        dayClick: $scope.alertEventOnClick,
+        eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
+        eventResize: $scope.alertOnResize,
+        dayClick: $scope.alertOnDayClick
       }
     };
 
     $scope.changeLang = function() {
       if($scope.changeTo === 'Hungarian'){
-        $scope.uiConfig.calendar.dayNames = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
-        $scope.uiConfig.calendar.dayNamesShort = ["Vas", "Hét", "Kedd", "Sze", "Csüt", "Pén", "Szo"];
+        $scope.uiConfig.calendar.dayNames = ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'];
+        $scope.uiConfig.calendar.dayNamesShort = ['Vas', 'Hét', 'Kedd', 'Sze', 'Csüt', 'Pén', 'Szo'];
         $scope.changeTo= 'English';
       } else {
-        $scope.uiConfig.calendar.dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        $scope.uiConfig.calendar.dayNamesShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        $scope.uiConfig.calendar.dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        $scope.uiConfig.calendar.dayNamesShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         $scope.changeTo = 'Hungarian';
       }
     };
@@ -121,7 +140,44 @@ angular.module('sandboxCoop4App')
 
     //////////////////////////////////////
     // My addtions
-    $scope.newEventForm = function () {
+    var DatepickerDemoCtrl = function ($scope) {
+      $scope.today = function() {
+        $scope.dt = new Date();
+      };
+      $scope.today();
 
-    }
+      $scope.showWeeks = true;
+      $scope.toggleWeeks = function () {
+        $scope.showWeeks = ! $scope.showWeeks;
+      };
+
+      $scope.clear = function () {
+        $scope.dt = null;
+      };
+
+      // Disable weekend selection
+      $scope.disabled = function(date, mode) {
+        return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+      };
+
+      $scope.toggleMin = function() {
+        $scope.minDate = ( $scope.minDate ) ? null : new Date();
+      };
+      $scope.toggleMin();
+
+      $scope.open = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened = true;
+      };
+
+      $scope.dateOptions = {
+        'year-format': "'yy'",
+        'starting-day': 1
+      };
+
+      $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
+      $scope.format = $scope.formats[0];
+    };
   });
