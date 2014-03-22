@@ -2,23 +2,6 @@
 
 angular.module('sandboxCoop4App')
   .controller('CalendarCtrl', function ($scope) {
-  	$scope.uiConfig = {
-      calendar:{
-        height: 450,
-        editable: true,
-        header:{
-          left: 'month basicWeek basicDay agendaWeek agendaDay',
-          center: 'title',
-          right: 'today prev,next'
-        },
-        dayClick: $scope.alertEventOnClick,
-        eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
-      }
-    };
-
-    // //////
-
 
     var date = new Date();
     var d = date.getDate();
@@ -111,11 +94,11 @@ angular.module('sandboxCoop4App')
         height: 450,
         editable: true,
         header:{
-          left: 'title',
-          center: '',
+          left: 'month agendaWeek agendaDay',
+          center: 'title',
           right: 'today prev,next'
         },
-        eventClick: $scope.alertOnEventClick,
+        dayClick: $scope.alertEventOnClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize
       }
