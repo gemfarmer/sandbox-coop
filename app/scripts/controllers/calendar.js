@@ -136,6 +136,9 @@ angular.module('sandboxCoop4App')
     $scope.eventSources = [$scope.events, $scope.eventSource, $scope.eventsF];
     $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
 
+    //////////////////////////////////////
+    // My addtions
+    $scope.newEventForm = function () {
 
-
+    }
   });
