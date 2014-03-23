@@ -1,6 +1,3 @@
 <div ng-include="'partials/navbar.html'"></div>
-
-<div class="col-xs-12 col-md-2" style="background-color:#ccc; height: 100px;">
-<button id="new-event-button" ng-click="newEventForm()"></button>
-</div>
-<div class="col-xs-12 col-md-10" style="display:inline-block;" ui-calendar ng-model="eventSources"></div>
+<a class="new-event" href="/event" ng-show="newEventMenu">New Event?</a>
+<div class="span8 calendar" ui-calendar="uiConfig.calendar" calendar="sandboxEvents" ng-model="eventSources"></div>

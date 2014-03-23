@@ -1,0 +1,26 @@
+<div ng-include="'partials/navbar.html'"></div>
+<h1>What up Dog?</h1>
+
+
+<label>Start Date</label>
+<div class="row">
+    <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="start" is-open="startOpened" min="minStartDate" max="maxStartDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+</div>
+<label>End Date</label>
+<div class="row">
+    <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="end" is-open="endOpened" min="minEndDate" max="maxEndDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+</div>
