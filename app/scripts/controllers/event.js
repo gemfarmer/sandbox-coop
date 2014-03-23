@@ -2,7 +2,7 @@
 
 
   angular.module('sandboxCoop4App')
-  .controller('EventCtrl', function ($scope, $timeout) {
+  .controller('EventCtrl', function ($scope, $timeout, $rootScope, $http) {
       $scope.today = function() {
         $scope.start = new Date();
         // console.log("Today: ",$scope.start)
@@ -28,6 +28,7 @@
 
       $scope.$watch('start', function(value){
         $scope.minEndDate = value;
+        $scope.timeStart = value;
       });
       // $scope.$watch('end', function(value){
       //   $scope.maxStartDate = value;
@@ -85,11 +86,13 @@
 
 
       //////////////////////////////////////
+      /// TimePicker
 
-      $scope.mytime = new Date();
+      $scope.timeStart = $scope.start
+      $scope.timeEnd = $scope.end
 
       $scope.hstep = 1;
-      $scope.mstep = 15;
+      $scope.mstep = 30;
 
       $scope.options = {
         hstep: [1, 2, 3],
@@ -105,15 +108,57 @@
         var d = new Date();
         d.setHours( 14 );
         d.setMinutes( 0 );
-        $scope.mytime = d;
+        $scope.timeStart = d;
       };
 
       $scope.changed = function () {
-        console.log('Time changed to: ' + $scope.mytime);
+        console.log('Time changed to: ' + $scope.timeStart);
+        $scope.start = $scope.timeStart
+        $scope.end = $scope.timeEnd
       };
 
       $scope.clearTime = function() {
-        $scope.mytime = null;
+        $scope.timeStart = null;
       };
+
+
+
+      /// Create New Event
+
+
+      $scope.createNewEvent = function () {
+        var eventObj = {
+          ownerId: $rootScope.currentUser,
+          type: $scope.titleOfEvent,
+          title: $scope.typeOfEvent,
+          start: $scope.start,
+          end: $scope.end,
+          allDay: $scope.allDay,
+          repeatEvent: $scope.repeatEvent,
+          location: $scope.eventLocation,
+          url: $scope.eventUrl
+        }
+        console.log(eventObj)
+        $http.post('/api/event', eventObj).success(function (data) {
+          return data
+        }).error(function(data, status, headers, config) {
+            return data
+        }).$promise;
+        // $http.post('/api/event').success(function(data) {
+        //   return Event.save({
+        //   ownerId: $rootScope.currentUser,
+        //   type: $scope.titleOfEvent,
+        //   title: $scope.typeOfEvent,
+        //   start: $scope.start,
+        //   end: $scope.end,
+        //   allDay: $scope.allDay,
+        //   repeatEvent: $scope.repeatEvent,
+        //   location: $scope.eventLocation,
+        //   url: $scope.eventUrl
+        // }).$promise;
+      }
+
+
+
 
   });

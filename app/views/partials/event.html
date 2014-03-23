@@ -1,6 +1,4 @@
 <div ng-include="'partials/navbar.html'"></div>
-<h1>What up Dog?</h1>
-
 
 <label>Start Date</label>
 <div class="row">
@@ -12,6 +10,9 @@
           </span>
         </p>
     </div>
+</div>
+<div ng-model="timeStart" ng-change="changed()" style="display:inline-block;">
+      <timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
 </div>
 <label>End Date</label>
 <div class="row">
@@ -25,7 +26,15 @@
     </div>
 </div>
 
-<label>What time?</label>
-<div ng-model="mytime" ng-change="changed()" style="display:inline-block;">
-        <timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-  </div>
+<div ng-model="timeEnd" ng-change="changed()" style="display:inline-block;">
+      <timepicker hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+</div>
+<label>Type of Event: </label><input class="form-control" ng-model="typeOfEvent"/>
+<label>Title of Event: </label><input class="form-control" ng-model="titleOfEvent"/>
+
+<label>All Day? </label><input type="checkbox" class="form-control" ng-model="allDay"/>
+<label>Repeat Event: </label><input type="checkbox" class="form-control" ng-model="repeatEvent"/>
+<label>Event Location: </label><input class="form-control" ng-model="eventLocation"/>
+<label>Event URL: </label><input class="form-control" ng-model="eventUrl"/>
+
+<button ng-click="createNewEvent()">Create New Event</button>
