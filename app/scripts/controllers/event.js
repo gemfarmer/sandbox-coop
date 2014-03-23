@@ -5,27 +5,34 @@
   .controller('EventCtrl', function ($scope, $timeout) {
       $scope.today = function() {
         $scope.start = new Date();
+        // console.log("Today: ",$scope.start)
       };
       $scope.today();
+      // console.log("$scope.start: ",$scope.start)
 
-      $scope.start = $scope.today();
       $scope.end = new Date();
+      // console.log("$scope.end: ",$scope.end)
 
       var today = new Date();
-      console.log(today)
       $scope.aYearFromToday = today.setDate(today.getDate() + (30*12) ); // One year out
+      // console.log("$scope.aYearFromToday: ",$scope.aYearFromToday)
 
       $scope.minStartDate = $scope.start; //fixed date
+      // console.log("$scope.minStartDate: ",$scope.minStartDate)
       $scope.maxStartDate = new Date('11/20/18'); //init value
+      // console.log("$scope.maxStartDate: ",$scope.maxStartDate)
       $scope.minEndDate = $scope.end; //init value
+      // console.log("$scope.minEndDate: ",$scope.minEndDate)
       $scope.maxEndDate = new Date('11/20/18'); //fixed date same as $scope.maxStartDate init value
+      // console.log("$scope.maxEndDate: ",$scope.maxEndDate)
 
-      $scope.$watch('start', function(v){
-        $scope.minEndDate = v;
+      $scope.$watch('start', function(value){
+        $scope.minEndDate = value;
       });
-      $scope.$watch('end', function(v){
-        $scope.maxStartDate = v;
-      });
+      // $scope.$watch('end', function(value){
+      //   $scope.maxStartDate = value;
+      //   console.log("$scope.maxStartDate updated: ",$scope.maxStartDate)
+      // });
 
       $scope.showWeeks = true;
       $scope.toggleWeeks = function () {
@@ -38,7 +45,8 @@
 
       // Disable weekend selection
       $scope.disabled = function(date, mode) {
-        return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+
+        // return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
       };
 
       $scope.toggleMin = function() {
