@@ -44,6 +44,10 @@ angular.module('sandboxCoop4App')
     /* alert on eventClick */
     $scope.alertOnEventClick = function( event, allDay, jsEvent, view ){
         console.log('event click')
+       console.log("event",event)
+       console.log("allDay",allDay)
+       console.log("jsEvent",jsEvent)
+       console.log("view",view)
         $scope.alertMessage = event.title + ' was clicked ';
     };
     /* alert on Drop */
@@ -58,11 +62,11 @@ angular.module('sandboxCoop4App')
     };
 
     $scope.alertOnDayClick = function(date, allDay, jsEvent, view ){
-       console.log('day click')
-       console.log("date",date)
-       console.log("allDay",allDay)
-       console.log("jsEvent",jsEvent)
-       console.log("view",view)
+       // console.log('day click')
+       // console.log("date",date)
+       // console.log("allDay",allDay)
+       // console.log("jsEvent",jsEvent)
+       // console.log("view",view)
        var $newEvent = $('.new-event')
        $newEvent.addClass('show')
        $newEvent.css('left',jsEvent.clientX-50)
