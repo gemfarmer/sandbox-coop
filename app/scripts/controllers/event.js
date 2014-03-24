@@ -128,7 +128,7 @@
 
       $scope.createNewEvent = function () {
         var eventObj = {
-          ownerId: $rootScope.currentUser,
+          id: $rootScope.currentUser,
           type: $scope.titleOfEvent,
           title: $scope.typeOfEvent,
           start: $scope.start,
