@@ -1,7 +1,8 @@
 # Sandbox Coop
 
-## [Past Demo Site](http://guarded-refuge-7678.herokuapp.com)
+
 ## [Final](sandboxcenter.com)
+###### [Past Demo Site](http://guarded-refuge-7678.herokuapp.com)
 
 ### TODO
 * Apply basic styles to calendar
