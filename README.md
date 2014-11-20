@@ -1,7 +1,7 @@
 # Sandbox Coop
 
 
-## [Final](sandboxcenter.com)
+## [Final Demo Site](sandboxcenter.com)
 ###### [Past Demo Site](http://guarded-refuge-7678.herokuapp.com)
 
 ### TODO
